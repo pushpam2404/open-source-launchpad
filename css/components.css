@@ -430,6 +430,11 @@
    screen-reader behaviour comes from the browser instead of from us.
    --------------------------------------------------------------------------- */
 
+.faq-controls {
+  margin-top: var(--s-3);
+  margin-bottom: var(--s-5);
+}
+
 .faq-item {
   border: 1px solid var(--c-border);
   border-radius: var(--radius);
