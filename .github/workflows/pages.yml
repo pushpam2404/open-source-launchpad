@@ -8,6 +8,12 @@ name: Deploy to Pages
 on:
   push:
     branches: [main]
+  # Pull requests that the auto-merge workflow merges are merged with the
+  # built-in GITHUB_TOKEN, and GitHub does not start new workflow runs for
+  # events caused by that token. Without a schedule the live site (and the
+  # contributor wall) would stay out of date after every such merge.
+  schedule:
+    - cron: "47 3 * * *"
   workflow_dispatch:
 
 permissions:

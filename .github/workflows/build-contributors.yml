@@ -11,6 +11,10 @@ on:
     paths:
       - "contributors/*.json"
       - "scripts/build_contributors.py"
+  # Auto-merged pull requests are merged with GITHUB_TOKEN, which does not
+  # trigger the push event above, so also rebuild once a day.
+  schedule:
+    - cron: "17 3 * * *"
   workflow_dispatch:
 
 permissions:
