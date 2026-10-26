@@ -204,7 +204,7 @@ dropped the ball.
 2. Look at how an existing page or component does the same thing
 3. Comment on the issue and tag the mentor listed on it
 4. Say what you have already tried — that alone often surfaces the answer
-5. Come to a **PR Debug Clinic** (Oct 12, Oct 21) and we will sit with you
+5. If your community runs a PR Debug Clinic, bring your branch along and ask for help there
 
 ```bash
 git status                       # what state am I in?
@@ -228,6 +228,6 @@ In short: be kind, assume good faith, and remember that the person asking a
 
 | Name | GitHub | Looks after |
 |---|---|---|
-| <!-- FILL: your name --> | <!-- FILL: @your-handle --> | Everything |
+| Pushpam | [@pushpam2404](https://github.com/pushpam2404) | Everything |
 
 **Domain:** OS & DevX

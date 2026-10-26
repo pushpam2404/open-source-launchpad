@@ -28,13 +28,15 @@ open source for the first time. That shapes how we behave.
 ## Scope
 
 This applies in all project spaces — issues, pull requests, commit messages,
-code reviews, Discord, WhatsApp groups — and at in-person events run by
+code reviews, chat groups — and at in-person events run by
 GITHUB Community GITAM.
 
 ## Reporting
 
-If you experience or witness something, contact a domain lead directly on Discord,
-or email <!-- FILL: contact email -->. Reports are handled confidentially.
+If you experience or witness something, message a maintainer listed in
+[CONTRIBUTING.md](CONTRIBUTING.md) directly (for example
+[@pushpam2404](https://github.com/pushpam2404) on GitHub), rather than posting
+in a public thread. Reports are handled confidentially.
 
 You will be believed, you will not be asked to justify why it bothered you, and
 you will not be pushed to interact with the person involved.

@@ -4,11 +4,10 @@
 
 **Please do not open a public issue for a security problem.**
 
-Instead, either:
-
-- Use GitHub's [private vulnerability reporting](../../security/advisories/new)
-  (the **Security** tab → **Report a vulnerability**), or
-- Email <!-- FILL: security contact email -->
+Instead, use GitHub's [private vulnerability reporting](../../security/advisories/new)
+(the **Security** tab → **Report a vulnerability**). If that option is not
+available to you, message [@pushpam2404](https://github.com/pushpam2404) on
+GitHub without including the details, and ask for a private way to send them.
 
 Please include:
 

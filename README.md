@@ -4,20 +4,37 @@
 Plain HTML and CSS. No build step, no framework, no <code>npm install</code>.</p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/good%20first%20issues-30-7057FF" alt="30 good first issues">
+  <a href="../../issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"><img src="https://img.shields.io/github/issues/pushpam2404/open-source-launchpad/good%20first%20issue?label=good%20first%20issues&color=7057FF" alt="Open good first issues"></a>
   <img src="https://img.shields.io/badge/setup-none%20required-1F883D" alt="No setup required">
   <img src="https://img.shields.io/badge/license-MIT-lightgrey" alt="MIT">
 </p>
+
+<p align="center"><a href="https://pushpam2404.github.io/open-source-launchpad/">Open the live site</a></p>
 
 ---
 
 ## What this is
 
 A small website that teaches people how to make their first open source
-contribution — and is itself the project they practise on.
+contribution, and is itself the project they practise on. It has a walkthrough
+of the Git workflow, a pre-PR checklist, a glossary, an FAQ and a contributor
+wall. The open issues are sized for someone who has never opened a pull request
+before; the issue list always shows what is available right now.
 
-Three pages of content, one contributor wall, and about thirty issues sized for
-someone who has never opened a pull request before.
+<p align="center">
+  <img src="docs/screenshots/home-desktop.png" alt="The home page: a headline, two buttons, and the five steps of making a contribution" width="720">
+</p>
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/wall-desktop.png" alt="The contributor wall with a search box and a contributor card"></td>
+    <td width="50%"><img src="docs/screenshots/git-basics-desktop.png" alt="The Git basics page walking through fork, clone, branch, commit, push and pull request"></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/faq-desktop.png" alt="The FAQ page with expandable answers"></td>
+    <td width="50%" align="center"><img src="docs/screenshots/home-mobile.png" alt="The home page on a 390 pixel wide phone screen" width="240"></td>
+  </tr>
+</table>
 
 ## Run it locally
 
@@ -48,9 +65,10 @@ none of them are yours to worry about. Here is the honest breakdown.
 | Folder / file | What is in it |
 |---|---|
 | **`contributors/`** | **One JSON file per person.** Adding yourself here is the easiest possible first pull request — copy `_TEMPLATE.json`, rename it to your username, fill in your name. |
-| **The `.html` files at the top level** | The four pages of the site: `index.html`, `git-basics.html`, `pr-checklist.html`, `wall.html`, plus `404.html`. Most beginner issues are "fix the text / add a link / add alt text" and happen in exactly one of these. |
+| **The `.html` files at the top level** | The pages of the site: `index.html`, `git-basics.html`, `pr-checklist.html`, `glossary.html`, `faq.html`, `wall.html`, plus `404.html`. Many beginner issues are "fix the text / add a link / add alt text" and happen in exactly one of these. |
 | `css/` | How the site looks. Start with `theme.css` — every colour and spacing value in the whole site is a variable in that one file. |
-| `js/` | Three small scripts: the dark-mode switch, the copy buttons on code blocks, and the contributor wall. Intermediate issues live here. |
+| `js/` | Small scripts, one job each: the dark-mode switch, the copy buttons on code blocks, the contributor wall, the glossary and the FAQ. Intermediate issues live here. |
+| `data/glossary.json` | The glossary entries. Each one is an object with a term and a definition. |
 
 ### 📖 Worth reading, not editing
 
@@ -72,7 +90,8 @@ require it.
 | `.htmlvalidate.json` | Settings for the HTML checker. |
 | `.gitignore` | A list of files Git should not track. |
 | `LICENSE`, `SECURITY.md`, `CODE_OF_CONDUCT.md` | Standard paperwork every open source project carries. |
-| `assets/` | Images the site uses. |
+| `docs/screenshots/` | The pictures used in this README. |
+| `robots.txt`, `sitemap.xml` | For search engines. |
 
 **The short version:** open an issue, it tells you the file. That file is
 almost always one `.html` page or one `.css` file. Everything else is scenery.
@@ -95,7 +114,7 @@ clone, branch, commit, push, PR. Full instructions on the
 
 ### Then pick a real issue
 
-1. Browse [issues labelled `good first issue`](../../issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+1. Browse the [open `good first issue` list](../../issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22). Anything marked `status: claimed` already has an owner
 2. Comment **`/claim`** — a bot assigns it to you within seconds
 3. Read [CONTRIBUTING.md](CONTRIBUTING.md)
 4. Open a PR with `Closes #<issue number>`
@@ -115,8 +134,12 @@ open-source-launchpad/
 ├── index.html            # the landing page
 ├── git-basics.html       # fork → clone → branch → commit → push → PR
 ├── pr-checklist.html     # run through this before opening a PR
+├── glossary.html         # plain-English Git and GitHub terms
+├── faq.html              # common questions, expandable answers
 ├── wall.html             # the contributor wall
 ├── 404.html
+├── robots.txt
+├── sitemap.xml
 ├── css/
 │   ├── theme.css         # all colours and spacing live here, as variables
 │   ├── base.css          # element defaults and resets
@@ -125,14 +148,18 @@ open-source-launchpad/
 ├── js/
 │   ├── theme-toggle.js   # light/dark, remembered per browser
 │   ├── copy-code.js      # copy buttons on code blocks
-│   └── wall.js           # loads and filters the contributor wall
+│   ├── wall.js           # loads and filters the contributor wall
+│   ├── glossary.js       # loads and filters the glossary
+│   └── faq.js            # expand / collapse all on the FAQ
+├── data/
+│   └── glossary.json     # glossary entries
 ├── contributors/
 │   ├── _TEMPLATE.json    # copy this
 │   ├── index.json        # generated — do not edit
 │   └── <username>.json   # one file per person
 ├── scripts/
 │   └── build_contributors.py   # ignore — a robot runs this for you
-├── assets/               # ignore — images
+├── docs/screenshots/     # ignore — README pictures
 ├── .github/              # ignore — CI checks, issue templates, bots
 ├── .htmlvalidate.json    # ignore — HTML-checker settings
 ├── .gitignore            # ignore
@@ -161,7 +188,7 @@ variable defined there, and there is a dark-theme value right below the light
 one. Change both.
 
 **Adding a page?** Copy the `<head>`, header, and footer from an existing page,
-add your page to the nav in all five files, and add `aria-current="page"` to its
+add your page to the nav in every other page, and add `aria-current="page"` to its
 own nav link.
 
 **Adding a component?** It goes in `css/components.css`, and it uses the
@@ -171,7 +198,7 @@ variables from `theme.css` rather than hard-coded colours.
 
 ## What CI checks, and what can actually stop your PR
 
-Four checks run on every pull request, and each one only fires on something
+These checks run on every pull request, and each one only fires on something
 genuinely broken:
 
 | Blocks the merge | Looks for |
@@ -196,15 +223,16 @@ python3 scripts/build_contributors.py --check
 
 ---
 
-## Events
+## Hosting
 
-Maintained by **OS & DevX**, GITHUB Community GITAM.
+The site is published to GitHub Pages by the `Deploy to Pages` workflow on
+every push to `main`, and once a day on a schedule. The schedule exists because
+pull requests merged by the auto-merge workflow do not trigger a push
+workflow (GitHub does not start runs for events caused by the built-in token),
+so without it the live site would lag behind `main`.
 
-| Date | Event |
-|---|---|
-| Mon, Oct 5 | Open Source Kickoff & Live PR Lab |
-| Mon, Oct 12 | PR Debug Clinic #1 — bring a broken branch |
-| Wed, Oct 21 | PR Debug Clinic #2 |
+Maintained by **OS & DevX**, GITHUB Community GITAM. The October kickoff and
+debug clinics have already taken place; the issues are still open to anyone.
 
 Also worth a look: **[terminal-arcade](https://github.com/pushpam2404/terminal-arcade)**,
 our Python mini-games project, if you would rather write Python than HTML.
