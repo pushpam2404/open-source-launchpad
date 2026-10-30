@@ -35,6 +35,12 @@
   --c-code-bg: #f6f8fa;
   --c-code-text: #1f2328;
 
+  /* Visual polish */
+  --c-grad: linear-gradient(135deg, #c026a3, #0969da);
+  --c-on-grad: #ffffff;
+  --c-glow-1: rgba(255, 138, 226, 0.28);
+  --c-glow-2: rgba(68, 147, 248, 0.16);
+
   /* Spacing scale */
   --s-1: 0.25rem;
   --s-2: 0.5rem;
@@ -93,6 +99,15 @@
   --c-code-bg: #161b22;
   --c-code-text: #e6edf3;
 
+  /* Visual polish */
+
+  --c-grad: linear-gradient(135deg, #ff8ae2, #4493f8);
+
+  --c-on-grad: #0d1117;
+
+  --c-glow-1: rgba(255, 138, 226, 0.16);
+
+  --c-glow-2: rgba(68, 147, 248, 0.14);
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
@@ -124,6 +139,15 @@
     --c-code-bg: #161b22;
     --c-code-text: #e6edf3;
 
+    /* Visual polish */
+
+    --c-grad: linear-gradient(135deg, #ff8ae2, #4493f8);
+
+    --c-on-grad: #0d1117;
+
+    --c-glow-1: rgba(255, 138, 226, 0.16);
+
+    --c-glow-2: rgba(68, 147, 248, 0.14);
     --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
   }

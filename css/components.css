@@ -463,3 +463,145 @@
   margin: 0 0 var(--s-2);
   color: var(--c-text-muted);
 }
+
+
+/* ---------------------------------------------------------------------------
+   Visual polish. Everything here only restyles what is above, using the tokens
+   in theme.css. Delete this block and the site still works.
+   --------------------------------------------------------------------------- */
+
+body {
+  background:
+    radial-gradient(56rem 26rem at 50% -9rem, var(--c-glow-1), transparent 70%),
+    radial-gradient(38rem 22rem at 92% 4rem, var(--c-glow-2), transparent 70%),
+    var(--c-bg);
+  background-repeat: no-repeat;
+}
+
+::selection {
+  background: var(--c-accent);
+  color: #1f2328;
+}
+
+.site-header {
+  background: color-mix(in srgb, var(--c-bg) 80%, transparent);
+  -webkit-backdrop-filter: saturate(1.4) blur(12px);
+  backdrop-filter: saturate(1.4) blur(12px);
+}
+
+.hero {
+  padding: var(--s-8) 0 var(--s-7);
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6.4vw, 4.25rem);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  background: var(--c-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  padding-bottom: 0.08em;
+}
+
+.hero__lead {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.btn {
+  border-radius: 999px;
+  padding-inline: var(--s-5);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn--primary {
+  background: var(--c-grad);
+  color: var(--c-on-grad);
+  border-color: transparent;
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--c-accent-strong) 32%, transparent);
+}
+
+.btn--primary:hover {
+  background: var(--c-grad);
+  color: var(--c-on-grad);
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--c-accent-strong) 40%, transparent);
+}
+
+.site-main h2 {
+  letter-spacing: -0.02em;
+}
+
+/* Steps: gradient badges on a fading rail. */
+.steps > li {
+  border-left-color: color-mix(in srgb, var(--c-accent) 55%, var(--c-border));
+}
+
+.steps > li::before {
+  background: var(--c-grad);
+  color: var(--c-on-grad);
+  box-shadow: 0 0 0 5px var(--c-bg);
+}
+
+/* Cards lift and pick up the accent. */
+.card {
+  background: linear-gradient(180deg, var(--c-surface), var(--c-bg));
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: color-mix(in srgb, var(--c-accent) 70%, var(--c-border));
+}
+
+.card__icon {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: var(--s-3);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--c-accent) 22%, var(--c-surface));
+  font-size: 1.4rem;
+}
+
+/* Tables: rounded, with quieter headers and gentle stripes. */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+th {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+}
+
+tbody tr:nth-child(even) td {
+  background: color-mix(in srgb, var(--c-surface) 65%, transparent);
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.callout {
+  border-radius: var(--radius-lg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover,
+  .card:hover {
+    transform: none;
+  }
+}
